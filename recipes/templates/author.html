@@ -6,6 +6,12 @@
     <title>Recipe Box</title>
 </head>
 <body>
-    
+    <p>This is author page</p>
+    <h1>{{authorData.name}}</h1>
+    <p>{{authorData.bio}}</p>
+    {% for recipe in allRecipes %}
+    <li><a href="/recipe/{{recipe.id}}/">{{recipe}}</a></li>
+    {% endfor %}
+    <span><a href="/">Home</a></span>
 </body>
 </html>

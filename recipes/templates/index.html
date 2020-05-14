@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Box</title>
 </head>
-<body style=
-    "
-    background-color: #aaf;
-    "
->
+<body>
     <h1>Welcome to the CookBook</h1>
     <div style=
         "
@@ -18,19 +14,13 @@
         display: flex;
         justify-content: space-between;
         flex-flow: row wrap;
+        align-content: center;
         "
     >
     <ul>
         {% for item in foodData %}
         <li style="padding: 10px;">
-            <h2><a href="recipe/">{{ item.title }}</a></h2>
-            <p>{{ item.description }}</p>
-            {{item.time_required}}
-            <br>
-            {{item.instructions}}
-            
-            written by
-            <span style="font-style: italic; color:red">{{item.author}}</span>
+            <h2><a href="/recipe/{{item.id}}/">{{ item.title }}</a></h2>
         </li>
         {% endfor %}
     </ul>

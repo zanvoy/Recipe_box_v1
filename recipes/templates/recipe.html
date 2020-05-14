@@ -6,7 +6,26 @@
     <title>Recipe Box</title>
 </head>
 <body>
-    <h1>{{foodData.title}}</h1>
-    <p>hello</p>
+    <div style=
+    "
+    width: 80%; 
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-content: center;
+    "
+>
+    <div style="padding: 10px;">
+        <h2><a href="/recipe/{{foodData.id}}/">{{ foodData.title }}</a></h2>
+        <p>{{ foodData.description }}</p>
+        {{foodData.time_required}}
+        <br>
+        {{foodData.instructions}}
+        written by
+        <span style="font-style: italic; color:red"><a href="/author/{{foodData.author.id}}/">{{foodData.author}}</a></span>
+    </div>
+</div>
+<span><a href="/">Home</a></span>
 </body>
 </html>
