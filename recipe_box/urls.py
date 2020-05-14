@@ -18,8 +18,10 @@ from django.urls import path
 from recipes import views
 
 urlpatterns = [
+    path('', views.index, name="homepage"),
     path('admin/', admin.site.urls),
-    path('', views.index),
     path('recipe/<int:recipe_id>/', views.recipeView),
-    path('author/<int:author_id>/', views.authorView)
+    path('author/<int:author_id>/', views.authorView),
+    path('recipeAdd/', views.addRecipeView),
+    path('authorAdd/', views.addAuthorView)
 ]
