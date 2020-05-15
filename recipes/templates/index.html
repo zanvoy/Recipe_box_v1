@@ -10,6 +10,8 @@
     <span><a href="/recipeAdd/">add Recipes here</a></span>
     <br>
     <span><a href="/authorAdd/">create new author here</a></span>
+    <br>
+    <span>are you authenticated? {{ request.user.is_authenticated }}</span>
     <div style=
         "
         width: 80%; 
@@ -28,5 +30,6 @@
         {% endfor %}
     </ul>
     </div>
+    <span><a href="/login/">sign out</a></span>
 </body>
 </html>
