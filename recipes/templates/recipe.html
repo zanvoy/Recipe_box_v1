@@ -18,6 +18,10 @@
 >
     <div style="padding: 10px;">
         <h2><a href="/recipe/{{foodData.id}}/">{{ foodData.title }}</a></h2>
+        
+        {%if user.is_superuser  or user == foodData.author.user%}
+        <a href="/recipe/{{foodData.id}}/edit">Edit</a>
+        {%endif%}
         <p>{{ foodData.description }}</p>
         {{foodData.time_required}}
         <br>
@@ -27,5 +31,8 @@
     </div>
 </div>
 <span><a href="/">Home</a></span>
+{%if request.user.is_authenticated %}
+<a href='/favorite/{{foodData.id}}'>Favorite</a>
+{%endif%}
 </body>
 </html>

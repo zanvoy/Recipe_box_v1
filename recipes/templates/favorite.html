@@ -6,11 +6,9 @@
     <title>Recipe Box</title>
 </head>
 <body>
-    <p>This is author page</p>
-    <h1>{{authorData.name}}</h1>
-    <p>{{authorData.bio}}</p>
-    <a href='{% url 'favorite' author_id=authorData.id %}'>{{authorData.name}}'s favorites</a>
-    {% for recipe in allRecipes %}
+    <p>This is {{author.name}}'s favorites</p>
+
+    {% for recipe in favorites %}
     <li><a href="/recipe/{{recipe.id}}/">{{recipe}}</a></li>
     {% endfor %}
     <span><a href="/">Home</a></span>
