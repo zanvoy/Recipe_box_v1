@@ -18,6 +18,10 @@
 >
     <div style="padding: 10px;">
         <h2><a href="/recipe/{{foodData.id}}/">{{ foodData.title }}</a></h2>
+        
+        {%if user.superuser or user.username == foodData.author%}
+            <a href="/recipe/{{foodData.id}}/edit">Edit</a>
+        {%endif%}
         <p>{{ foodData.description }}</p>
         {{foodData.time_required}}
         <br>
