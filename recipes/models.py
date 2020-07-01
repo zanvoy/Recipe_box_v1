@@ -1,10 +1,12 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Author (models.Model):
     name = models.CharField(max_length=50, default='your name')
     bio = models.TextField(default='a little about me')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank = True, null = True)
     favorite = models.ManyToManyField('RecipeItem', related_name='favorite')
     def __str__(self):
         return self.name
